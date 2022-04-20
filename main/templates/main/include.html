@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script defer src="{%static 'main/js/SmoothScroll.min.js'%}"></script>
+    <script defer src="{%static 'main/js/jquery.min.js'%}"></script>
+    <script defer src="{%static 'main/js/script.js'%}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{%static 'main/img/icon.svg'%}">
+    <link rel="stylesheet" href="{%static 'main/css/style.css'%}">
+    {% block title %}{% endblock title %}    
+</head>
+
+
+<body>
+    <div class="menuButton">
+        <div class="menuIcon"></div>
+    </div>
+    <div class="back">       
+    </div>
+    <div class="menu">
+        <div class="menudiv">
+            <a href="">Личный кабинет</a>
+            <div class="line"></div>
+            <a href="">Вход</a>
+            <div class="line"></div>
+            <a href="">Регистрация</a>
+        </div>
+    </div>
+
+    <div class="hearder">
+        <div class="logoBar">
+            <img src="{%static 'main/img/gray_logo.png'%}" alt="">
+        </div>
+        <div class="headBar">
+            <a href="">Вход</a>
+            <a href="">Регистрация</a>
+        </div>
+      
+    </div>
+    {% block content %}
+        
+    {% endblock content %}
+    <div class="footer">
+        <div class="footerLeft">
+            <p>При наличии вопросов или комментариев обратитесь в Стопфактор</p>
+            <p>Адрес: 123182 Москва Авиационная ул.
+            <p>Телефон: +7 (499) 350-20-01</p>
+            </p>
+        </div>
+        <div class="footerRigth">
+            <div>
+                <img src="{%static 'main/img/mc.png'%}" alt="">
+                <img src="{%static 'main/img/visa.png'%}" alt="">
+                <img src="{%static 'main/img/mirLogo.png'%}" alt="">
+            </div>
+            <p>Оплата производится в защищенном режиме и персональные данные вашей карты  в безопасности</p>
+        </div>
+        <div class="footerBottom">
+            <p>Стопфактор.рф 2022</p>
+        </div>
+    </div>
+</body>
+</html>
