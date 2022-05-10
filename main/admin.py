@@ -1,3 +1,6 @@
 from django.contrib import admin
+from main.models import PayOrder, Price, TestRequests
 
-# Register your models here.
+admin.site.register(PayOrder)
+admin.site.register(TestRequests)
+admin.site.register(Price)

@@ -3,7 +3,33 @@
 {% block title %}<title>Оплата - Стопфактор.рф</title>{% endblock title %}    
 {% block content %}
 <div class="payPage">
-    <p>Оплата производится в защищенном режиме и персональные данные вашей карты в безопасности</p>
-    <button>Купить 100 РУБ</button>
+    <div class="payForm">
+        {%if order%}
+        <div><span>Фамилия:</span><p>{{order.surname}}</p></div>
+        <div class="line"></div>
+        <div><span>Имя:</span><p>{{order.name}}</p></div>
+        <div class="line"></div>
+        <div><span>Отчество:</span><p>{{order.patronymic}}</p></div>
+        <div class="line"></div>
+        <div><span>Серия:</span><p>{{order.series}}</p></div>
+        <div class="line"></div>
+        <div><span>Номер:</span><p>{{order.number}}</p></div>
+        <div class="line"></div>
+        <div><span>Дата рождения:</span><p>{{order.date}}</p></div>
+        <div class="line"></div>
+        <div><span>Эл почта:</span><p>{{order.email}}</p></div>
+        <p class="payNotification">Информация поступит на Ваш email. В случае если вы не получили ответ проверьте папку спам у вас в почте .</p>
+        <form action=" https://merchant.intellectmoney.ru/ru/" method="POST">
+            <input type="hidden" name="successUrl" value="https://xn--80aukccjbier.xn--p1ai">
+            <input type="hidden" name="backUrl" value="https://xn--80aukccjbier.xn--p1ai">
+            <input type="hidden" name="eshopId", value="462500">
+            <input type="hidden" name="orderId", value="{{order.token}}">
+            <input type="hidden" name="recipientAmount", value="{{price}}">
+            <input type="hidden" name="recipientCurrency", value="RUB">
+            <button class="payButton" type="submit">Оплатить {{price}} РУБ</button>
+        </form>
+        {%endif%}   
+        <p class="payinfo">Оплата производится в защищенном режиме и персональные данные вашей карты в безопасности</p>
+    </div>
 </div>
 {% endblock content %}

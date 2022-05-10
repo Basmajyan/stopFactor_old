@@ -1,0 +1,16 @@
+{% extends 'main/include.html' %}
+{% load static %}
+{% block title %}<title>Оплата - Стопфактор.рф</title>{% endblock title %}    
+{% block content %}
+<head>    
+    <meta http-equiv="Refresh" content="18" />
+</head>
+<script>
+    localStorage.setItem('widget', 'true')
+</script>
+<div class="contactPage">
+    <img class="downloadPNG" src="{%static 'main/img/load.png'%}" alt="">
+    <img class="downloadPNG2" src="{%static 'main/img/load2.png'%}" alt="">
+    <p class="loadtext">Информация обрабатывается, пожалуйста подождите.</p>
+ </div>
+{% endblock content %}
